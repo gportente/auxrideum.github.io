@@ -104,10 +104,6 @@ p.lead {
 		display: flex;
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
-		-ms-flex-direction: column;
-		flex-direction: column;
-		width: 17rem;
-		height: 100vh;
 	}
 	#sideNav .navbar-brand {
 		display: -webkit-box;
@@ -117,9 +113,9 @@ p.lead {
 		padding: 0.5rem;
 	}
 	#sideNav .navbar-brand .img-profile {
-		max-width: 10rem;
-		max-height: 10rem;
-		border: 0.5rem solid rgba(255, 255, 255, 0.2);
+		max-width: 8rem;
+		max-height: 8rem;
+		border: 0.5rem solid rgba(189, 77, 33, 0.2);
 	}
 	#sideNav .navbar-collapse {
 		display: -webkit-box;
@@ -137,8 +133,6 @@ p.lead {
 	#sideNav .navbar-collapse .navbar-nav {
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
-		-ms-flex-direction: column;
-		flex-direction: column;
 		width: 100%;
 	}
 	#sideNav .navbar-collapse .navbar-nav .nav-item {
