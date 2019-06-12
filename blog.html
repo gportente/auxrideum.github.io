@@ -33,30 +33,8 @@
             </div>
         </nav>
 
-        <div class="container-fluid p-0">
-            <section class="resume-section p-3 p-lg-5 d-flex align-items-center">
-                <div class="w-100">
-                    <h3>
-                        <span class="text-primary">
-                            Handling a job as a programmer
-                        </span>
-                        <small style="font-size: 60%;">22-12-2001</small>
-                    </h3>
-                    <p class="lead mb-5">Lorem ipsum dolor sit amet.</p>
-                </div>
-            </section>
-            <hr class="m-0">
-            <section class="resume-section p-3 p-lg-5 d-flex align-items-center">
-                <div class="w-100">
-                    <h3>
-                        <span class="text-primary">
-                            Handling a job as a programmer
-                        </span>
-                        <small style="font-size: 60%;">22-12-2001</small>
-                    </h3>
-                    <p class="lead mb-5">Lorem ipsum dolor sit amet.</p>
-                </div>
-            </section>
+        <div id="blog" class="container-fluid p-0">
+
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
@@ -64,9 +42,13 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         
         <script>
-        $.getJSON('https://pastebin.com/raw/fX62G2tv', function(data) {
-            //data is the JSON string
-            console.log(data);
+        $(function() {
+            $.getJSON('https://pastebin.com/raw/fX62G2tv', function(data) {                
+                $.each(data.blog_posts, function(i, f) {
+                    var blogElement = document.getElementById('blog');
+                    blogElement.innerHTML += "<section class='resume-section p-3 p-lg-5 d-flex align-items-center'><div class='w-100'><h3><span class='text-primary'>" + f.title + "</span><small style='font-size: 60%;''> " + f.created_at + "</small></h3><p class='lead mb-5'>" + f.text + "</p></div></section><hr class='m-0'>"
+                });
+            });
         });
         </script>
     </body>
