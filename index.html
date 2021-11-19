@@ -88,6 +88,15 @@
                         <div class="resume-content">
                             <h3 class="mb-0" style="text-transform: unset;"><a id="imagePets" href="images/pets-app.jpg" target="_blank">Pets App</a></h3>
                             <div>Fully-working pets app build with Flutter & Firebase.</div>
+                            <div id="imagesPetsApp" style="display: none;">
+                                <img src="/images/petsbook/pets-app.jpg"/>
+                                <img src="/images/petsbook/pets-app-1.jpg"/>
+                                <img src="/images/petsbook/pets-app-2.jpg"/>
+                                <img src="/images/petsbook/pets-app-3.jpg"/>
+                                <img src="/images/petsbook/pets-app-4.jpg"/>
+                                <img src="/images/petsbook/pets-app-5.jpg"/>
+                                <img src="/images/petsbook/pets-app-6.jpg"/>
+                            </div>
                         </div>
                     </div>
                     <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
@@ -215,14 +224,22 @@
         <script src="js/viewerjs/viewer.js"></script>
 
         <script>
-        function checkURL(url) {
+        function isUrlExtensionImage(url) {
             return(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
         }
 
         $('a').click( function(e) {
             targetUrl = e.target['href'];
 
-            if(checkURL(targetUrl)) {
+            if(isUrlExtensionImage(targetUrl)) {
+                
+                if(targetUrl.includes("pets-app")) {
+                    const gallery = new Viewer(document.getElementById('imagesPetsApp'));
+                    gallery.show();
+
+                    return false;
+                }
+
                 var image = new Image();
                 image.src = targetUrl;
 
