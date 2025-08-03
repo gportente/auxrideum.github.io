@@ -69,6 +69,10 @@ p.lead {
     color: #b3b3b3;
 }
 
+.resume-item .resume-date {
+    white-space: nowrap;
+}
+
 .social-icons a {
 	display: inline-block;
 	height: 3.5rem;
@@ -165,7 +169,6 @@ p.lead {
 section.resume-section {
 	padding-top: 5rem !important;
 	padding-bottom: 5rem !important;
-	max-width: 85rem;
     border-bottom: 1px solid var(--card-border);
     background-color: var(--content-bg);
 }
